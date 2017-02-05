@@ -1,5 +1,9 @@
 const {Schema} = require('mongoose');
 
+const validateEmail = (email) => {
+
+}
+
 const User = new Schema({
 	email: {
 		type: String,
