@@ -1,4 +1,17 @@
-const User = requre('../models/User');
+const User = require('../models/User');
+const jwt = require('jwt-simple');
+const config = require('./config')
+
+const tokenForUser = () => {
+	const timestamp = new Date().getTime()
+	// Subject : User being assigned the JWT
+	// Issued At Time: Time user was issued JWT
+	// Config: 
+	return jwt.encode({
+		sub: user.id,
+		iat: timestamp
+	}, config.secret);
+}
 
 exports.signup = (req,res,next) => {
 	const email = req.body.email;
