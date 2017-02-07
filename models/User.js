@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+let mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 const bcrypt = require('bcrypt-nodejs');
 const {Schema} = mongoose;
-mongoose.Promise = require('bluebird');
 
 const validateEmail = (email) => {
 	return (/[\w-]+@([\w-]+\.)+[\w-]+/).test(email);
@@ -31,6 +31,8 @@ User.pre('save', (next) => {
 				next();
 			});
 		});
+	} else {
+		next();
 	}
 })
 
