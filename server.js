@@ -9,12 +9,13 @@ const PORT = process.env.PORT || 3000;
 
 const auth = require('./api/auth');
 
-const uri = 'mongodb://localhost:node-auth-jwt/node-auth-jwt';
-// Use bluebird
-const options = { promiseLibrary: require('bluebird') };
-const db = mongoose.createConnection(uri, options);
+// const uri = 'mongodb://localhost:node-auth-jwt/node-auth-jwt';
+// // Use bluebird
+// const options = { promiseLibrary: require('bluebird') };
+// const db = mongoose.createConnection(uri, options);
+// console.log(`My DB: ${db}`);
 
-// mongoose.connect('mongodb://localhost:node-auth-jwt/node-auth-jwt');
+mongoose.connect('mongodb://localhost:node-auth-jwt/node-auth-jwt');
 
 app.use(morgan('dev'));
 app.use(json());
