@@ -1,21 +1,35 @@
 {
-  "name": "node-auth-jwt",
+  "name": "poovey",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "description": "> React | Redux | Node | Express | Mongo",
+  "main": "server.js",
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "bluebird": "^3.4.7",
-    "body-parser": "^1.16.0",
-    "express": "^4.14.1",
-    "jwt-simple": "^0.5.1",
-    "mongoose": "^4.8.1",
-    "morgan": "^1.7.0",
-    "uuid": "^3.0.1"
-  }
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.12.4",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.0",
+    "passport-local": "^1.0.0",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.1"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thisisbrad/Poovey.git"
+  },
+  "author": "Brad Beltowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thisisbrad/Poovey/issues"
+  },
+  "homepage": "https://github.com/thisisbrad/Poovey#readme"
 }
