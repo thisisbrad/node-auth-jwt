@@ -14,15 +14,12 @@ const tokenForUser = (user) => {
 };
 
 exports.signup = (req,res,next) => {
-	const email = req.body.email;
-	const password = req.body.password;
-	// const {email, password} = req.body;
+	const {email, password} = req.body;
 	if(!email || !password) {
 		return res.status(422).json({error: 'You must provide an email and password'});
-	}
+	};
 
-	User.findOne({email}, function(err, existingUser) {
-		console.log(`finding... ${existingUser}`);
+	User.findOne({email}, (err, existingUser) => {
 		if (err) { return next(err) }
 		if (existingUser) { return res.status(422).json({error: 'Email already taken.'})}
 		const user = new User({
